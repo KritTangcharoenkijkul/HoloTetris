@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://spr/Korone.png" type="Texture" id=1]
+[ext_resource path="res://scn/Gacha.gd" type="Script" id=2]
+[ext_resource path="res://fonts/Perfect DOS VGA 437 Win.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 160
+font_data = ExtResource( 3 )
+
+[node name="Gacha" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+rect_min_size = Vector2( 1920, 1080 )
+color = Color( 0.356863, 0.486275, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 937.0
+margin_top = 437.0
+margin_right = 1849.0
+margin_bottom = 616.0
+custom_fonts/font = SubResource( 1 )
+text = "Roll Gacha"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 461, 524 )
+scale = Vector2( 50, 50 )
+texture = ExtResource( 1 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
